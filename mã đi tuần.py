@@ -40,4 +40,3 @@ def printSolution(board):
         print()
 
 solveKnightTour(6)
-# guyigu
