@@ -21,7 +21,7 @@ def bai_2(lst):
             
 ## cài đặt stack 
 class stack:
-    # hàm khởi tạo rỗng 
+    # hàm khởi tạo 
     def __init__(self):
         self.items=[0,2,4]
     # hàm thêm phần tử
