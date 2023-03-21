@@ -20,4 +20,4 @@ def bai_2(lst):
             print(f'{item,lst.count(item)}')
             
 ## cài đặt stack 
-
+#họkjll,;;
