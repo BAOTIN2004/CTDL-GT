@@ -20,4 +20,28 @@ def bai_2(lst):
             print(f'{item,lst.count(item)}')
             
 ## cài đặt stack 
-#họkjll,;;
+class stack:
+    # hàm khởi tạo rỗng 
+    def __init__(self):
+        self.items=[0,2,4]
+    # hàm thêm phần tử
+    def push(self,item):
+        self.items.append(item)
+        # hàm tính độ dài stack
+    def __len__(self):
+        return (f'Độ dài ngăn sắp xếp: {len(self.items)}')
+    # hàm lấy phần tử , nếu độ dài của ngăn xếp bằng 0 thì trả về stack is empty
+    def pop(self):
+        if len(self.items==0): return " stack is empty"
+        return self.items.pop()
+    # hàm kiểm tra ngăn xếp rỗng
+    def stack_is_empty(self):
+        return "Ngăn xếp rỗng",len(self.items==0)
+    # hàm hiển thị các phần tử trong ngăn xếp
+    def __str__(self):
+        return str(self.items)
+    
+
+a=stack()
+a.push(9)
+print(a.__str__())                            
