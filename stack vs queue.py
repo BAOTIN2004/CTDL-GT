@@ -42,6 +42,3 @@ class stack:
         return str(self.items)
     
 
-a=stack()
-a.push(9)
-print(a.__str__())                            
