@@ -40,5 +40,8 @@ class stack:
     # hàm hiển thị các phần tử trong ngăn xếp
     def __str__(self):
         return str(self.items)
+
+# cài đặt queue
+
     
 
