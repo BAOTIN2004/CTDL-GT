@@ -22,8 +22,8 @@ def bai_2(lst):
 ## cài đặt stack ( vào sau ra trước)
 class stack:
     # hàm khởi tạo 
-    def __init__(self):
-        self.items=[0,2,4]
+    def __init__(self,items):
+        self.items=items
     # hàm thêm phần tử
     def push(self,item):
         self.items.append(item)
