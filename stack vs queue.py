@@ -19,7 +19,7 @@ def bai_2(lst):
             # dùng hàm count để đếm số lần xuất hiện của các phần tử trong set của list
             print(f'{item,lst.count(item)}')
             
-## cài đặt stack 
+## cài đặt stack ( vào sau ra trước)
 class stack:
     # hàm khởi tạo 
     def __init__(self):
@@ -41,7 +41,6 @@ class stack:
     def __str__(self):
         return str(self.items)
 
-# cài đặt queue
-
-    
+# cài đặt queue ( vào trước ra trước)
+  
 
