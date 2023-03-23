@@ -20,7 +20,7 @@ def bai_2(lst):
             print(f'{item,lst.count(item)}')
             
 ## cài đặt stack ( vào sau ra trước)
-class stack:
+class Stack:
     # hàm khởi tạo 
     def __init__(self,items):
         self.items=items
@@ -42,5 +42,50 @@ class stack:
         return str(self.items)
 
 # cài đặt queue ( vào trước ra trước)
+
+# tạo lớp dslk
+class Dslk:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+    def __str__(self):
+        return f'{self.data} vs { self.next}'
+
+
+class Queue:
+    def __init__(self):
+        self.front = None # tham chiếu đến nút đầu tiên
+        self.rear = None # tham chiếu đến nút cuối cùng
+
+    def put(self, data):
+        new_node = Dslk(data)
+        if self.front is None:
+            self.front = new_node
+            self.rear = new_node
+        else:
+            self.rear.next = new_node
+            self.rear = new_node
+
+    def get(self):
+        if self.front is None:
+            return None
+        else:
+            data = self.front.data
+            self.front = self.front.next
+            if self.front is None:
+                self.rear = None
+            return data
+
+    # hàm kiểm tra xem ngăn đợi có trống hay không
+    def empty(self):
+        # chỉ cần kiểm tra nút đầu tiên
+        if self.front is None:
+            return True
+        else:
+            return False
+
   
 
+a=Queue()
+(a.put([9,0]))
+print(a.get())
