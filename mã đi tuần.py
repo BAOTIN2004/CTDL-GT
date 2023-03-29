@@ -24,7 +24,7 @@ def ma_di_chuyen(board, x, y, moves, movei, n):
         if isSafe(next_x, next_y, board, n)==True:
             board[next_x][next_y] = movei
             # Tìm kiếm đường đi từ nước đi mới
-            if ma_di_chuyen(board, next_x, next_y, moves, movei+1, n):
+            if ma_di_chuyen(board, next_x, next_y, moves, movei+1, n)==True:
                 return True
             # Quay lui nếu không tìm thấy giải pháp từ nước đi mới
             board[next_x][next_y] = -1
@@ -36,7 +36,7 @@ def isSafe(x, y, board, n):
 def printSolution(board):
     for i in range(len(board)):
         for j in range(len(board)):
-            print(board[i][j], end = ' ')
+            print(board[i][j], end = ' ')   
         print()
 
 solveKnightTour(6)
