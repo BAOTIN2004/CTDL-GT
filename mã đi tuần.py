@@ -5,7 +5,7 @@ def solveKnightTour(n):
     moves = [(2,1),(1,2),(-1,2),(-2,1),(-2,-1),(-1,-2),(1,-2),(2,-1)]
     # Đặt con mã vào ô bắt đầu
     # a,b=map(int,input('Nhập vị trí xuất phát của mã:\t').split())
-    board[2][5] = 0
+    board[0][0] = 0
     # Bắt đầu tìm kiếm đường đi
     if not ma_di_chuyen(board, 0, 0, moves, 1, n):
         print("Không tìm thấy giải pháp")
