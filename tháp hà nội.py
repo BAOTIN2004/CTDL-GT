@@ -10,9 +10,6 @@ def thap_ha_noi(n,cot_a,cot_b,cot_c):
     thap_ha_noi(n-1,cot_a,cot_c,cot_b)
     print(f'Chuyển đĩa {n} từ { cot_a} sang {cot_c} ')      
     thap_ha_noi(n-1,cot_b,cot_a,cot_c)
-    
-
-    
-      
+thap_ha_noi(4,"a","b","c")
         
         

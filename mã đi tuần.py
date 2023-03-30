@@ -1,4 +1,4 @@
-def solveKnightTour(n):
+def kiem_tra_ket_qua(n):
     # Khởi tạo bàn cờ
     board = [[-1 for i in range(n)] for j in range(n)]
     # Các nước đi của con mazz
@@ -39,4 +39,4 @@ def printSolution(board):
             print(board[i][j], end = ' ')   
         print()
 
-solveKnightTour(6)
+kiem_tra_ket_qua(6)
