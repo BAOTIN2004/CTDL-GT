@@ -1,14 +1,14 @@
-def solve(board, col):
+def tim_kiem(board, col):
     # Nếu đã đặt được quân hậu vào cột cuối cùng thì kết thúc
     if col == len(board):
         return True
     
     # Thử đặt quân hậu vào các ô trong cột
     for row in range(len(board)):
-        if is_safe(board, row, col):
+        if kiem_tra(board, row, col):
             board[row][col] = 1
             # Đệ quy đến cột tiếp the
-            if solve(board, col+1):
+            if tim_kiem(board, col+1):
                 return True
             # Nếu không tìm thấy giải pháp thì quay lui
             board[row][col] = 0
@@ -16,7 +16,7 @@ def solve(board, col):
     # Nếu không tìm thấy giải pháp thì trả về False
     return False
 
-def is_safe(board, row, col):
+def kiem_tra(board, row, col):
     # Kiểm tra hàng ngang
     for i in range(col):
         if board[row][i] == 1:  
@@ -43,7 +43,7 @@ n=int(input('Nhập kích cỡ bàn cờ: '))
 board = [[0 for x in range(n)] for y in range(n)]
 
 # Giải quyết bài toán
-if solve(board, 0)== True:
+if tim_kiem(board, 0)== True:
     # In ra bàn cờ đã giải quyết
     for row in board:
         print(row)
