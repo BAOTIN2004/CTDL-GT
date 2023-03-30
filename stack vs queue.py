@@ -85,7 +85,12 @@ class Queue:
             return False
 
   
-
-a=Queue()
-(a.put([9,0]))
-print(a.get())
+def tim_kiem():
+    a=[0,2]
+    b=[1,34,2,3,4,0]
+    c=[]
+    for i in range(len(a)):
+        for j in range(len(b)):
+            if a[i]==b[j]: c.append(j)
+    return c
+tim_kiem()
