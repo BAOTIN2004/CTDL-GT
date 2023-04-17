@@ -1,20 +1,6 @@
-def tim_kiem(board, col):
-    # Nếu đã đặt được quân hậu vào cột cuối cùng thì kết thúc
-    if col == len(board):
-        return True
-    
-    # Thử đặt quân hậu vào các ô trong cột
-    for row in range(len(board)):
-        if kiem_tra(board, row, col):
-            board[row][col] = 1
-            # Đệ quy đến cột tiếp the
-            if tim_kiem(board, col+1):
-                return True
-            # Nếu không tìm thấy giải pháp thì quay lui
-            board[row][col] = 0
-    
-    # Nếu không tìm thấy giải pháp thì trả về False
-    return False
+# Khởi tạo bàn cờ nxn
+n=int(input('Nhập kích cỡ bàn cờ: '))
+board = [[0 for x in range(n)] for y in range(n)]
 
 def kiem_tra(board, row, col):
     # Kiểm tra hàng ngang
@@ -38,9 +24,22 @@ def kiem_tra(board, row, col):
     # Nếu không bị tấn công thì trả về True
     return True
 
-# Khởi tạo bàn cờ nxn
-n=int(input('Nhập kích cỡ bàn cờ: '))
-board = [[0 for x in range(n)] for y in range(n)]
+def tim_kiem(board, col):
+    # Nếu đã đặt được quân hậu vào cột cuối cùng thì kết thúc
+    if col == len(board):
+        return True
+    # Thử đặt quân hậu vào các ô trong cột
+    for row in range(len(board)):
+        if kiem_tra(board, row, col)==True:
+            board[row][col] = 1
+            # Đệ quy đến cột tiếp the
+            if tim_kiem(board, col+1)==True:
+                return True
+            # Nếu không tìm thấy giải pháp thì quay lui
+            board[row][col] = 0
+    
+    # Nếu không tìm thấy giải pháp thì trả về False
+    return False
 
 # Giải quyết bài toán
 if tim_kiem(board, 0)== True:
@@ -49,3 +48,4 @@ if tim_kiem(board, 0)== True:
         print(row)
 else:
     print("Không tìm thấy giải pháp")
+
