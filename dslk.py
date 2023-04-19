@@ -31,8 +31,20 @@ class Dslk:
             now=now.next
         if before==None:
             # chen dau dslk
-            node.n
-            
+            node.next=self.dau
+            self.dau=node   
+            if self.duoi==None:
+                self.duoi=node
+        else:
+            if now== None:
+                # them vao cuoi ds
+                self.duoi.next=node
+                self.duoi=node
+            else:
+                # chen vao giua ds
+                truoc.next=node
+                node.next=now
+                         
     
     def remove_LinkedList(self,data):
         pass
@@ -49,6 +61,7 @@ class Dslk:
 def main():
     ds=Dslk()
     ds.add_LinkedList(12)
+    ds.insert_LinkedList(0,8)
     ds.add_LinkedList(19)
     ds.print_LinkedList()
 if __name__ =='__main__':
