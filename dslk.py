@@ -3,8 +3,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-    def __str__(self):
-        return f'{self.data} vs { self.next}'
+
 class Dslk:
     def __init__(self):
         self.dau=None
@@ -27,9 +26,9 @@ class Dslk:
         i=0
         while i<index and now is not None:
             i+=1
-            truoc=now
+            before=now
             now=now.next
-        if truoc==None:
+        if before==None:
             # chen dau dslk
             node.next=self.dau
             self.dau=node   
@@ -42,7 +41,7 @@ class Dslk:
                 self.duoi=node
             else:
                 # chen vao giua ds
-                truoc.next=node
+                before.next=node
                 node.next=now
                          
     
@@ -50,7 +49,14 @@ class Dslk:
         pass
     
     def find_LinkedList(self,data):
-        pass
+        now=self.dau
+        index=0
+        while now!= None and now.data != data:
+            # nếu tìm thấy thì kết thúc vòng lặp
+            now=now.next
+            index +=1
+        if now==None: return None
+        else: return index
     
     def print_LinkedList(self):
         print('Danh sách liên kết:',end=' ')
@@ -66,6 +72,7 @@ def main():
     ds.add_LinkedList(14)
     ds.insert_LinkedList(4,15)
     ds.add_LinkedList(19)
+    print(ds.find_LinkedList(15))
     ds.print_LinkedList()
 if __name__ =='__main__':
     main()
