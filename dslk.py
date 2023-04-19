@@ -60,8 +60,11 @@ class Dslk:
             temp=temp.next
 def main():
     ds=Dslk()
+    ds.add_LinkedList(11)
     ds.add_LinkedList(12)
-    ds.insert_LinkedList(0,8)
+    ds.add_LinkedList(13)
+    ds.add_LinkedList(14)
+    ds.insert_LinkedList(4,15)
     ds.add_LinkedList(19)
     ds.print_LinkedList()
 if __name__ =='__main__':
