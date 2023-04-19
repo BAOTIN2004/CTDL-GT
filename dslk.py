@@ -29,7 +29,7 @@ class Dslk:
             i+=1
             truoc=now
             now=now.next
-        if before==None:
+        if truoc==None:
             # chen dau dslk
             node.next=self.dau
             self.dau=node   
