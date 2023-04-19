@@ -43,13 +43,7 @@ class Stack:
 
 # cài đặt queue ( vào trước ra trước)
 
-# tạo lớp dslk
-class Dslk:
-    def __init__(self, data=None):
-        self.data = data
-        self.next = None
-    def __str__(self):
-        return f'{self.data} vs { self.next}'
+
 
 
 class Queue:
