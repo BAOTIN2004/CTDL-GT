@@ -22,8 +22,8 @@ def bai_2(lst):
 ## cài đặt stack ( vào sau ra trước)
 class Stack:
     # hàm khởi tạo 
-    def __init__(self,items):
-        self.items=items
+    def __init__(self):
+        self.items=[]
     # hàm thêm phần tử
     def push(self,item):
         self.items.append(item)
@@ -36,11 +36,15 @@ class Stack:
         return self.items.pop()
     # hàm kiểm tra ngăn xếp rỗng
     def stack_is_empty(self):
-        return "Ngăn xếp rỗng",len(self.items==0)
+        if len(self.items)==0:
+            return "Ngăn xếp rỗng"
+        else: return len(self.items)
     # hàm hiển thị các phần tử trong ngăn xếp
     def __str__(self):
         return str(self.items)
-
+a=Stack()
+a.push(7)
+print(a.stack_is_empty())
 # cài đặt queue ( vào trước ra trước)
 
 
@@ -52,7 +56,7 @@ class Queue:
         self.rear = None # tham chiếu đến nút cuối cùng
 
     def put(self, data):
-        new_node = Dslk(data)
+        new_node = (data) #####
         if self.front is None:
             self.front = new_node
             self.rear = new_node
@@ -87,4 +91,3 @@ def tim_kiem():
         for j in range(len(b)):
             if a[i]==b[j]: c.append(j)
     return c
-tim_kiem()

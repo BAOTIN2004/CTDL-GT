@@ -1,4 +1,4 @@
-# tạo lớp dslk
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -10,7 +10,6 @@ class Dslk:
         self.duoi=None
     
     def add_LinkedList(self, data):
-        # thêm vào sau
         node=Node(data)
         if self.dau is None:
             self.dau=node
@@ -45,8 +44,7 @@ class Dslk:
                 node.next=now
                          
     
-    def remove_LinkedList(self,data):
-        pass
+   
     
     def find_LinkedList(self,data):
         now=self.dau
@@ -62,8 +60,25 @@ class Dslk:
         print('Danh sách liên kết:',end=' ')
         temp=self.dau
         while (temp):
-            print(temp.data,end='; ')
+            print(temp.data,end=' ')
             temp=temp.next
+            
+    def remove_LinkedList(self,data):
+        # kiem tra vo rong hay kh
+        if self.dau is None:
+            return
+        
+        if self.dau.data == data:
+            self.dau = self.dau.next
+            return
+        now = self.dau
+        while now.next is not None:
+            if now.next.data == data:
+                now.next = now.next.next
+                return
+            now = now.next
+    
+    
 def main():
     ds=Dslk()
     ds.add_LinkedList(11)
@@ -73,6 +88,7 @@ def main():
     ds.insert_LinkedList(4,15)
     ds.add_LinkedList(19)
     print(ds.find_LinkedList(15))
+    ds.remove_LinkedList(15)
     ds.print_LinkedList()
 if __name__ =='__main__':
     main()
