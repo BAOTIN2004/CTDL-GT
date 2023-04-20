@@ -71,6 +71,7 @@ class Dslk:
         if self.dau.data == data:
             self.dau = self.dau.next
             return
+        
         now = self.dau
         while now.next is not None:
             if now.next.data == data:
