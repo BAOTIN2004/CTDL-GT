@@ -17,7 +17,7 @@ def ma_di_chuyen(board, x, y, moves, movei, n):
     if movei == n*n:
         return True
     # Duyệt tất cả các nước đi của con mã
-    for i in range(n):
+    for i in range(8):
         next_x = x+ moves[i][0]
         next_y = y+moves[i][1]
         # Kiểm tra xem nước đi mới có nằm trên bàn cờ và chưa được đi qua
