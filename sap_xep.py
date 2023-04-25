@@ -12,7 +12,7 @@ def sap_xep_chon(lst):
         lst_1[min],lst_1[i]=lst_1[i],lst_1[min]
     return lst_1
 
-# sắp XẾP NỔI 
+# sắp xếp nổi bọt
 def sap_xep_noi(lst):
     lst_1=lst.copy()
     for i in range(len(lst)-1):
@@ -21,6 +21,7 @@ def sap_xep_noi(lst):
                 lst_1[i],lst_1[j]=lst_1[j],lst_1[i]
     return lst_1
 
+# sắp xếp tăng 
 def sap_xep_chen(lst):
     lst_1=lst.copy()
     for i in range(len(lst)):
@@ -32,7 +33,6 @@ def sap_xep_chen(lst):
             lst_1[index]=lst[index-1]
             index-=1
         lst_1[index]=value
-        print(lst_1[index])
+    
     return lst_1
 
-print(sap_xep_chen([1,4,3]))
