@@ -73,7 +73,7 @@ class Queue:
             return None
         return self.items.pop(0)
     # truy xuất thông tin số phần tử trong hàng đợi
-    def size(self):
+    def __len__(self):
         return len(self.items)
 
 def tim_kiem():
