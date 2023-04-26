@@ -32,7 +32,8 @@ class Stack:
         return (f'Độ dài ngăn sắp xếp: {len(self.items)}')
     # hàm lấy phần tử , nếu độ dài của ngăn xếp bằng 0 thì trả về stack is empty
     def pop(self):
-        if len(self.items==0): return " stack is empty"
+        if len(self.items)==0: 
+            return None
         return self.items.pop()
     # hàm kiểm tra ngăn xếp rỗng
     def stack_is_empty(self):
@@ -44,45 +45,37 @@ class Stack:
         return str(self.items)
 a=Stack()
 a.push(7)
-print(a.stack_is_empty())
+a.push(6)
+a.push(4)
+print(a.pop())
+#print(a.stack_is_empty())
 # cài đặt queue ( vào trước ra trước)
 
 
 
-
+# cài đặt Queue (vào trước ra trước)
 class Queue:
+    
+    # phương thức khởi tạo hàng đợi rỗng
     def __init__(self):
-        self.front = None # tham chiếu đến nút đầu tiên
-        self.rear = None # tham chiếu đến nút cuối cùng
-
-    def put(self, data):
-        new_node = (data) #####
-        if self.front is None:
-            self.front = new_node
-            self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
-
-    def get(self):
-        if self.front is None:
+        self.items = []
+        
+    # kiểm tra hàng đợi có rỗng hay không, trả về True hoặc False
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    # thêm phần tử vào cuối hàng đợi
+    def enqueue(self, item):
+        self.items.append(item)
+    # lấy phần từ theo quy tắc FIFO ra khỏi hàng đợi
+    def dequeue(self):
+        if self.is_empty():
             return None
-        else:
-            data = self.front.data
-            self.front = self.front.next
-            if self.front is None:
-                self.rear = None
-            return data
+        return self.items.pop(0)
+    # truy xuất thông tin số phần tử trong hàng đợi
+    def size(self):
+        return len(self.items)
 
-    # hàm kiểm tra xem ngăn đợi có trống hay không
-    def empty(self):
-        # chỉ cần kiểm tra nút đầu tiên
-        if self.front is None:
-            return True
-        else:
-            return False
-
-  
 def tim_kiem():
     a=[0,2]
     b=[1,34,2,3,4,0]
