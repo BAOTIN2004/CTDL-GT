@@ -25,14 +25,13 @@ def sap_xep_noi(lst):
 def sap_xep_chen(lst):
     lst_1=lst.copy()
     for i in range(len(lst)):
-        # 0,1,2
-        # 1,4,3
-        index=i
-        value=lst_1[i]
-        while( index>0 and(lst_1[index-1]>value)):
-            lst_1[index]=lst[index-1]
-            index-=1
-        lst_1[index]=value
+        index_min=i
+        min=lst_1[i]
+        while( index_min>0 and(lst_1[index_min-1]>min)):
+            lst_1[index_min]=lst_1[index_min-1]
+            index_min-=1
+        lst_1[index_min]=min
     
     return lst_1
-
+print(sap_xep_chen([9,2,0]))
+# 
