@@ -64,7 +64,7 @@ class Dslk:
             temp=temp.next
             
     def remove_LinkedList(self,data):
-        # kiem tra vo rong hay kh
+        # kiem tra vo rong hay k
         if self.dau is None:
             return
         
