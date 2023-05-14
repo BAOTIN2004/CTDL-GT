@@ -64,7 +64,7 @@ class Dslk:
             temp=temp.next
             
     def remove_LinkedList(self,data):
-        # kiem tra vo rong hay k
+         
         if self.dau is None:
             return
         
@@ -73,7 +73,7 @@ class Dslk:
             return
         
         now = self.dau
-        while now.next is not None:
+        while now is not None:
             if now.next.data == data:
                 now.next = now.next.next
                 return
@@ -89,6 +89,7 @@ def main():
     ds.insert_LinkedList(4,15)
     ds.add_LinkedList(19)
     print(ds.find_LinkedList(15))
+    ds.insert_LinkedList(7,18)
     ds.remove_LinkedList(15)
     ds.print_LinkedList()
 if __name__ =='__main__':
