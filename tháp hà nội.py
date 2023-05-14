@@ -8,7 +8,7 @@ def ucln1(a, b):
     if a == 0 or b == 0:
         return a if b == 0 else b
     else:
-        return ucln(b, a % b)
+        return ucln1(b, a % b)
 
 def thap_ha_noi(n,cot_a,cot_b,cot_c):
     if n==1: 
