@@ -53,6 +53,19 @@ class DoublyLinkedList:
                         else:
                             temp.prev.next=None
             temp=temp.next 
+    
+    def search(self,data):
+        i=0
+        a=[]
+        temp=self.head
+        while temp is not None:
+            if temp.data==data:
+                a.append(i)
+            i+=1
+            temp=temp.next
+        if a is None: return None
+        else: return a
+            
                
     def display(self):
         current = self.head
@@ -66,4 +79,7 @@ a.append(1)
 a.append(2)
 a.append(3)
 a.delete(1)
+
 a.display()
+print('\n',a.search(7))
+
