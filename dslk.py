@@ -49,12 +49,15 @@ class Dslk:
     def find_LinkedList(self,data):
         now=self.dau
         index=0
-        while now!= None and now.data != data:
-            # nếu tìm thấy thì kết thúc vòng lặp
+        a=[]
+        while now!= None:
+            if now.data==data:
+                a.append(index)
             now=now.next
             index +=1
-        if now==None: return None
-        else: return index
+        return a
+    
+    
     
     def print_LinkedList(self):
         print('Danh sách liên kết:',end=' ')
@@ -70,27 +73,32 @@ class Dslk:
         
         if self.dau.data == data:
             self.dau = self.dau.next
-            return
-        
+            
+    
         now = self.dau
+        prev = None
         while now is not None:
-            if now.next.data == data:
-                now.next = now.next.next
-                return
-            now = now.next
+            if now.data == data:
+                # nut trc se tro toi nut tiep theo , bo qua nut hien tai
+                prev.next = now.next  
+            prev = now
+            now = now.next 
     
     
 def main():
     ds=Dslk()
-    ds.add_LinkedList(11)
-    ds.add_LinkedList(12)
-    ds.add_LinkedList(13)
-    ds.add_LinkedList(14)
-    ds.insert_LinkedList(4,15)
-    ds.add_LinkedList(19)
-    print(ds.find_LinkedList(15))
-    ds.insert_LinkedList(7,18)
-    ds.remove_LinkedList(15)
+    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+
+    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    # ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    # index,value = map(int, input('Nhập lần lượt vị trí và giá trị muốn chèn (phân tách bằng dấu chấm phẩy): ').split(" "))
+    # ds.insert_LinkedList(index,value)
+    # ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    print(ds.find_LinkedList(int(input('Nhập giá trị muốn tìm kiếm trong danh sách:'))))
+    # ds.insert_LinkedList(7,18)
+    ds.remove_LinkedList(int(input('Nhập giá trị muốn xóa khỏi danh sách liên kết:')))
     ds.print_LinkedList()
 if __name__ =='__main__':
     main()
