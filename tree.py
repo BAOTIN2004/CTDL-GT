@@ -22,18 +22,35 @@ class Node:
             else: 
                 print(f'Khóa bị trùng: {key}')
 
-def Inorder_Traversal(node):
+def Preorder_Traversal(node):
     if node is None: return
     print(node.key,end=' ')
-    Inorder_Traversal(node.left)
-    Inorder_Traversal(node.right)
-
-
-a=Node(None)
-a.insert_key(2)
-a.insert_key(4)
-a.insert_key(0)
-Inorder_Traversal(a)
+    Preorder_Traversal(node.left)
+    Preorder_Traversal(node.right)
+    
+def main():
+    tree=Node(None)
+    tree.insert_key(5)
+    tree.insert_key(4)
+    tree.insert_key(6)
+    tree.insert_key(2)
+    tree.insert_key(-3)
+    tree.insert_key(3)
+    tree.insert_key(9)
+    tree.insert_key(8)
+    # a=int(input('Nhập số 1 để thêm nút vào cây:'))
+    # while a==1:
+    #     tree.insert_key(int(input('Nhập nút muốn thêm:')))
+    #     a=int(input('Nhập số 1 để thêm nút vào cây:'))
+    # print('Duyệt cây theo thứ tự trước:')
+    Preorder_Traversal(tree)
+if __name__ == '__main__':
+     main()
+# a=Node(None)
+# a.insert_key(2)
+# a.insert_key(4)
+# a.insert_key(0)
+# Inorder_Traversal(a)
 # class Binary_Tree:
 #     def __init__(self,key=None):
 #         node=Node(key)
@@ -50,4 +67,3 @@ Inorder_Traversal(a)
 #     def delete_node( self,key):
 #         pass
 #     def hjh:pass
-            
