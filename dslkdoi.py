@@ -43,10 +43,10 @@ class DoublyLinkedList:
                 if temp.prev is None:
                      self.head = temp.next
                 else: 
-                    if self.head is  None:
-                        self.head.prev = None
-        # Nếu phần tử cần xóa không phải là nút đầu tiên
-                    else:
+        #             if self.head is  None:
+        #                 self.head.prev = None
+        # # Nếu phần tử cần xóa không phải là nút đầu tiên
+        #             else:
                         if temp.next is not None:
                             temp.prev.next=temp.next
                             temp.next.prev=temp.prev
@@ -63,7 +63,7 @@ class DoublyLinkedList:
                 a.append(i)
             i+=1
             temp=temp.next
-        if a is None: return None
+        if len(a)==0: return None
         else: return a
             
                
@@ -72,14 +72,19 @@ class DoublyLinkedList:
         while current:
             print(current.data,end=' ')  # In ra dữ liệu của nút hiện tại
             current = current.next
-a=DoublyLinkedList()
-a.append(0)
-a.append(1)
-a.append(1)
-a.append(2)
-a.append(3)
-a.delete(1)
-
-a.display()
-print('\n',a.search(7))
-
+def main():
+    a=1
+    ds=DoublyLinkedList()
+    while a==1:
+        data=int(input('Nhập giá trị bạn muốn thêm vào danh sách: '))
+        ds.append(data)
+        a=int(input('Nhập số 1 để thêm giá trị mới vào danh sách: '))
+    data=int(input('Nhập giá trị bạn muốn chèn: '))
+    index=int(input('Nhập vị trí bạn muốn chèn: '))
+    ds.insert(data,index)
+    print(ds.search(int(input('Nhập giá trị bạn muốn tìm kiếm: '))))
+    ds.delete(int(input('Nhập giá trị bạn muốn xóa khỏi danh sách liên kết: ')))
+    print('Danh sách liên kết:') 
+    ds.display()  
+if __name__=="__main__":
+    main()

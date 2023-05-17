@@ -27,7 +27,12 @@ def Preorder_Traversal(node):
     print(node.key,end=' ')
     Preorder_Traversal(node.left)
     Preorder_Traversal(node.right)
-    
+
+def Postoder_Traversal(node):
+    if node is None: return
+    Postoder_Traversal(node.left)
+    Postoder_Traversal(node.right)
+    print(node.key,end=' ')
 def main():
     tree=Node(None)
     tree.insert_key(5)
@@ -43,7 +48,8 @@ def main():
     #     tree.insert_key(int(input('Nhập nút muốn thêm:')))
     #     a=int(input('Nhập số 1 để thêm nút vào cây:'))
     # print('Duyệt cây theo thứ tự trước:')
-    Preorder_Traversal(tree)
+    # Preorder_Traversal(tree)
+    Postoder_Traversal(tree)
 if __name__ == '__main__':
      main()
 # a=Node(None)
