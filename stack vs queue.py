@@ -48,7 +48,8 @@ a.push(7)
 a.push(6)
 a.push(4)
 print(a.pop())
-#print(a.stack_is_empty())
+print(a.__len__())
+print(a)
 # cài đặt queue ( vào trước ra trước)
 
 
