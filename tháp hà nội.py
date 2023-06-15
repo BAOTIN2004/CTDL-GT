@@ -17,7 +17,8 @@ def thap_ha_noi(n,cot_a,cot_b,cot_c):
     thap_ha_noi(n-1,cot_a,cot_c,cot_b)
     print(f'Chuyển đĩa {n} từ { cot_a} sang {cot_c} ')      
     thap_ha_noi(n-1,cot_b,cot_a,cot_c)
-thap_ha_noi(3,'A',"B","C")
+n=int(input('nhap dia'))
+thap_ha_noi(n,'A',"B","C")
 
 # Chuyển đĩa 1 từ A sang C
 # Chuyển đĩa 2 từ A sang B
