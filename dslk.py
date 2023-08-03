@@ -87,11 +87,10 @@ class Dslk:
     
 def main():
     ds=Dslk()
-    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
-    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
-    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
-
-    ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
+    ds.add_LinkedList(int(input('Them gia tri vao danh sach: ')))
+    ds.add_LinkedList(int(input('Them gia tri vao danh sach: ')))
+    ds.add_LinkedList(int(input('Them gia tri vao danh sach: ')))
+    ds.add_LinkedList(int(input('Them gia tri vao danh sach: ')))
     # ds.add_LinkedList(int(input('Thêm giá trị vào danh sách:')))
     # index,value = map(int, input('Nhập lần lượt vị trí và giá trị muốn chèn (phân tách bằng dấu chấm phẩy): ').split(" "))
     # ds.insert_LinkedList(index,value)

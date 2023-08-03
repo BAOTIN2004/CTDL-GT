@@ -33,6 +33,7 @@ def sap_xep_chen(lst):
         lst_1[index_min]=min
     
     return lst_1
+sap_xep_chen([2,1,5,0])
 # sắp xếp nhanh
 def sap_xep_nhanh(lst):
     lst_1=lst.copy()
@@ -69,7 +70,7 @@ def quicksort(arr, low, high):
         quicksort(arr, pi + 1, high)
 
 # Sử dụng hàm quicksort
-arr = [3, 1, 7, 5, 2, 4, 6]
+arr = [8,2,3]
 quicksort(arr, 0, len(arr) - 1)
 # print(arr)
 
